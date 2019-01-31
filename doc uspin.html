@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<title>Uspin Documentation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+pre {
+background:#E1E1E1;
+padding:10px;
+}
+.parenthese {
+color:red;
+}
+.resultat {
+color:#AF5B0A;
+}
+.block {
+border:grey dotted 1px;
+padding:20px;
+}
+h3 {
+margin-top:30px;
+}
+</style>
+
+
+<div id="header">
+	<h1><a href="">Uspin documentation</a></h1>
+</div>
+
+<ul>
+	<li><a href="">Version française</a></li>
+	<li><a href="">English version</a></li>
+</ul>
+
+<h3>Spin classique</h3>
+<p>Choisit au hasard une possibilité.</p>
+<div class="block">
+<pre><span class="parenthese">{</span>bonjour<span class="parenthese">|</span>hello<span class="parenthese">|</span>hi<span class="parenthese">}</span></pre>
+<p>donnera :</p>
+<pre class="resultat">bonjour</pre>
+</div>
+
+<h3>Spin suivi</h3>
+<p>Choisit au hasard un numéro et garde le même numéro tout le long du texte.</p>
+<div class="block">
+<pre>Hi, my name is
+<span class="parenthese">#1#</span>Mark<span class="parenthese">#/1##2#</span>Carla<span class="parenthese">#/2##3#</span>James<span class="parenthese">#/3#</span>
+And I love <span class="parenthese">#1#</span>apples<span class="parenthese">#/1##2#</span>pickles<span class="parenthese">#/2##3#</span>cheese<span class="parenthese">#/3#</span></pre>
+<p>donnera :</p>
+<pre class="resultat">Hi, my name is
+Mark
+And I love apples</pre>
+</div>
+
+<h3>Tag</h3>
+<p>Crée une balise html. Fonctionne par paires.</p>
+<div class="block">
+<pre>
+<span class="parenthese">[tag=h1]</span>Mark<span class="parenthese">[/tag]</span>
+<span class="parenthese">[tag=strong]</span>I like <span class="parenthese">[tag=u]</span>drinking<span class="parenthese">[/tag]</span> coke<span class="parenthese">[/tag]</span>
+<span class="parenthese">[tag={h1|h2|h3|p}]</span>{Yet |}Another title<span class="parenthese">[/tag]</span>
+</pre>
+<p>donnera :</p>
+<pre class="resultat">
+&lt;h1>Mark&lt;/h1>
+&lt;strong>I like &lt;u>drinking&lt;/u> coke&lt;/strong>.
+&lt;h3>Another title&lt;/h3>
+</pre>
+</div>
+
+
+<h3>Blocks</h3>
+<p>Crée des zones dans votre texte, vous permet de mélanger des parties de votre texte. <strong>Ne doit pas être contenu dans une balise de spin classique.</strong></p>
+<div class="block">
+<pre>
+<span class="parenthese">[blocks]</span>
+&lt;h2>About Lorem&lt;/h2>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac elit nec odio auctor rhoncus et ac sem.
+Donec nisi tellus, imperdiet fermentum consectetur pellentesque, imperdiet id risus.
+Donec pharetra, mauris vel pellentesque consequat, quam elit hendrerit lectus,eget auctor mi ante eu velit. Ut id fermentum nulla.
+Nullam tortor neque, tincidunt vitae auctor nec, tempus vel lacus. Praesent eleifend fringilla ultricies.
+<span class="parenthese">|</span>
+&lt;h2>Nulla facilsi&lt;/h2>
+Nulla facilisi. Curabitur ac arcu neque. Aenean posuere lacinia enim vitae vestibulum. Nunc in sem ipsum, at ullamcorper nisl.
+Maecenas eget urna sem. Nam molestie mattis dignissim. Cum sociis natoque penatibus et magnis dis parturient montes,
+nascetur ridiculus mus.
+<span class="parenthese">|</span>
+&lt;h2>Maurice&lt;/h2>
+Mauris ac enim lacus, a porta mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus vel odio quam, ut tempus magna.
+<span class="parenthese">[/blocks]</span>
+
+</pre>
+<p>donnera :</p>
+<pre class="resultat">
+&lt;h2>Nulla facilsi&lt;/h2>
+Nulla facilisi. Curabitur ac arcu neque. Aenean posuere lacinia enim vitae vestibulum. Nunc in sem ipsum, at ullamcorper nisl.
+Maecenas eget urna sem. Nam molestie mattis dignissim. Cum sociis natoque penatibus et magnis dis parturient montes,
+nascetur ridiculus mus.
+
+&lt;h2>Maurice&lt;/h2>
+Mauris ac enim lacus, a porta mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus vel odio quam, ut tempus magna.
+
+&lt;h2>About Lorem&lt;/h2>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac elit nec odio auctor rhoncus et ac sem.
+Donec nisi tellus, imperdiet fermentum consectetur pellentesque, imperdiet id risus.
+Donec pharetra, mauris vel pellentesque consequat, quam elit hendrerit lectus,eget auctor mi ante eu velit. Ut id fermentum nulla.
+Nullam tortor neque, tincidunt vitae auctor nec, tempus vel lacus. Praesent eleifend fringilla ultricies.
+</pre>
+</div>
+
+
+<h3>List</h3>
+<p>Crée une liste, en la mélangeant et en ajoutant/supprimant des éléments, avec l'argument passé en séparateur. Si pas d'argument la fonction en génère un au hasard. Les éléments de la liste doivent être séparés par un point-virgule.</p>
+<div class="block">
+<pre>
+<span class="parenthese">[list=li]</span>
+this is my first element;
+this is my second element;
+this is my third element;
+this is my fourth element
+<span class="parenthese">[/list]</span>
+
+<span class="parenthese">[list=,]</span>
+this is my first element;
+this is my second element;
+this is my third element;
+this is my fourth element
+<span class="parenthese">[/list]</span>
+
+<span class="parenthese">[list==>]</span>
+this is my first element;
+this is my second element;
+this is my third element;
+this is my fourth element
+<span class="parenthese">[/list]</span>
+
+<span class="parenthese">[list=+]</span>
+this is my first element;
+this is my second element;
+this is my third element;
+this is my fourth element
+<span class="parenthese">[/list]</span>
+
+</pre>
+<p>donnera :</p>
+<pre class="resultat">
+&lt;ul>
+&lt;li>this is my third element&lt;/li>
+&lt;li>this is my first element&lt;/li>
+&lt;li>this is my fourth element&lt;/li>
+&lt;/ul>
+
+this is my fourth element, this is my first element, this is my second element, this is my third element
+
+=>this is my second element
+&lt;br>=>this is my third element
+&lt;br>=>this is my first element
+&lt;br>=>this is my fourth element
+
++this is my fourth element
+&lt;br>+this is my third element
+&lt;br>+this is my second element
+</pre>
+</div>
+
+
+<h3>Size</h3>
+<p>Définit la taille du texte entre les tags.</p>
+<div class="block">
+<pre>
+<span class="parenthese">[size=15]</span>my text<span class="parenthese">[/size]</span> is the best
+
+</pre>
+<p>donnera :</p>
+<pre class="resultat">
+&lt;span style="font-size:15px">my text is the best&lt;/span>
+</pre>
+</div>
+
+<h3>Img</h3>
+<p>Insère une image ayant comme url l'argument entre les tags.</p>
+<div class="block">
+<pre>
+<span class="parenthese">[img]</span>http://mysite/mypic.jpg<span class="parenthese">[/img]</span> is the best
+
+</pre>
+<p>donnera :</p>
+<pre class="resultat">
+&lt;img src="http://mysite/mypic.jpg" />
+</pre>
+</div>
+
+<h3>Flickr</h3>
+<p>Aspire une image aléatoire de flickr trouvée avec le mot clé entre les tags.</p>
+<div class="block">
+<pre>
+<span class="parenthese">[flickr]</span>car<span class="parenthese">[/flickr]</span>
+<span class="parenthese">[flickr]</span>{car|bike}<span class="parenthese">[/flickr]</span>
+
+</pre>
+<p>donnera :</p>
+<pre class="resultat">
+&lt;img src="http://farm5.static.flickr.com/4006/4619399567_90a7d8dc6f.jpg">&lt;br>DSC_8364
+
+&lt;img src="http://farm4.static.flickr.com/3300/4620002422_ed7dee4aaf.jpg">&lt;br>waldgeflüster
+
+</pre>
+</div>

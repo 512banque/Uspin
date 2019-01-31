@@ -1,0 +1,5 @@
+{
+    "require": {
+        "samwilson/phpflickr": "^4.8"
+    }
+}

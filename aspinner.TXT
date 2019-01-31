@@ -1,0 +1,15 @@
+{Hello|Bonjour|Salut} {je suis|moi c'est|mon nom c'est}, #1#Mark#/1##2#Sophie#/2##3#Michel#/3# et je suis très content#2#e#/2# d’être parmi vous !
+
+[tag={h1|h2|h3|p}]Bienvenue sur mon {essai|texte} de spin{age|ing|}[/tag]
+
+
+[blocks]
+{Puisque|Etant donné que} la mode est au [tag={i|em|b|strong|}][url={http://motercalo.pointslash.info|http://motercalo.wordpress.com}]{motercalo|moter calo}[/url][/tag], j'ai décidé de vous en parler et de faire une petite parenthèse.
+|
+{Pour moi|De mon point de vue}, le spin{age|ing|} est {très|particulièrement|} {intéressant|avantageux} pour {différentes|{de nombreuses |}plusieurs} raisons :<br />
+[list]C'est rapide; C'est pratique; Ca permet de {faire|générer} du contenu {pertinent|unique}; Ca augmente votre {ROI|productivité}[/list]
+|
+{Nous le savons tous|On le sait tous}, {content is king|le contenu est roi}, {ainsi|donc|} il faut {particulièrement|} le soigner.
+[/blocks]
+Merci pour m'avoir écouté#2#e#/2#.
+C'était #1#Mark#/1##2#Sophie#/2##3#Michel#/3# en direct de CNN.
